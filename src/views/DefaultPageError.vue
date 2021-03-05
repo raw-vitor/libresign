@@ -25,7 +25,6 @@
 	<div class="container">
 		<div id="img" />
 		<div class="content">
-			<h1>404</h1>
 			<h2 v-for="error in errors" :key="error">
 				{{ error }}
 			</h2>
@@ -58,20 +57,15 @@ export default {
 	align-items: center;
 	justify-content: center;
 	height: 100%;
-
+	background-image: url('../../img/bg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 	#img{
-		background-image: url('../assets/images/sad-face-in-rounded-square.svg');
-		height: 140px;
-		width: 140px;
+		background-image: url('../../img/404.png');
+		height: 400px;
+		width: 400px;
 		background-repeat: no-repeat;
 		background-size: cover;
-		line-height: 17.6px;
-
-		&::before {
-			content: '';
-			background-color: rgb(0, 245, 248);
-			border: 50%;
-		}
 	}
 
 }
@@ -80,29 +74,76 @@ export default {
 	box-sizing: border-box;
 	font-family: 'Nunito', sans-serif;
 	text-transform: uppercase;
-	color: rgb(21, 23, 25);
 	max-width: 560px;
 	padding-left: 50px;
-
-	h1{
-		font-size: 65px;
-		font-weight: 700;
-		line-height: 71.5px;
-		margin-bottom: 10px;
-		margin-top: 0px;
-	}
+	margin-top: -100px;
 
 	h2{
-		font-size: 21px;
+		color: white;
+		font-size: 36px;
 		font-weight: 400;
 		line-height: 23.1px;
 		margin: 0px;
 		margin-bottom: 10px;
 	}
 	p{
-		color: rgb(153, 159, 165);
+		margin-top: 20px;
+		color: white;
 		font-weight: 400;
 		line-height: 17.6px;
+		font-size: 16px;
+	}
+}
+
+@media screen and (max-width: 950px) {
+	#img{
+		margin-left: -50px;
+	}
+	.container{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.content{
+		margin-top: 50px;
+		width: 90%;
+	}
+
+}
+
+@media screen and (max-width: 515px) {
+	#img{
+		background-image: url('../../img/404-mobile.png') !important;
+		width: 265px !important;
+		height: 252px !important;
+	}
+	.content{
+		padding-left: 0px !important;
+		h2{
+			text-align: center;
+			font-size: 22px;
+			font-weight: 600;
+		}
+	}
+}
+
+@media screen and (max-width: 376px) {
+	#img{
+		margin-left: -15px !important;
+		width: 265px !important;
+		height: 252px !important;
+		align-items: center;
+		justify-content: center;
+		align-self: center;
+	}
+	.content{
+		align-items: center;
+		padding-left: 0px !important;
+		width: 90%;
+		h2{
+			font-size: 22px;
+		}
 	}
 }
 </style>
